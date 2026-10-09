@@ -103,7 +103,7 @@ const SERVICES: { icon: IconName; title: string; body: string; tag?: string }[] 
   {
     icon: "building",
     title: "Commercial Properties",
-    body: "Lawn care and property maintenance for business owners too. One customer trusts Easton with both his home and his business properties.",
+    body: "Lawn care and property maintenance for business owners too. One customer trusts Easton with both a home and several business properties.",
   },
 ];
 
@@ -397,7 +397,7 @@ export default function Home() {
                   CheckMate Landscaping is Easton&apos;s business. He looks after lawns, lays sod, designs and builds patios, and clears snow for homeowners and business owners across Brantford and the surrounding area.
                 </p>
                 <p>
-                  The name says it plainly: before a job is called finished, it gets checked. Customers notice. Jim said it was the attention to the small details that made his result stellar, and Chris trusts Easton with his home and his businesses because he is careful with every one of them.
+                  The name says it plainly: before a job is called finished, it gets checked. Customers notice. Jim said it was the attention to the small details that made his result stellar, and Chris trusts Easton with both a home and several business properties because he is careful with every one of them.
                 </p>
                 <p>
                   When you call or text, you reach Easton directly. There is no office to go through and no waiting a week to hear back, which is why reviewers keep using the same two words: reliable and responsive.
