@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --bg: oklch(0.99 0.006 120);
+  --surface: oklch(1 0 0);
+  --tint: oklch(0.965 0.022 130);
+  --warm: oklch(0.975 0.025 90);
+  --ink: oklch(0.22 0.03 145);
+  --muted: oklch(0.43 0.03 145);
+  --line: oklch(0.9 0.025 135);
+  --brand: oklch(0.5 0.13 145);
+  --brand-deep: oklch(0.34 0.09 150);
+  --brand-soft: oklch(0.94 0.045 135);
+  --cta: oklch(0.84 0.16 85);
+  --cta-hover: oklch(0.8 0.165 80);
+  --cta-ink: oklch(0.24 0.04 70);
+  --star: oklch(0.76 0.16 75);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-tint: var(--tint);
+  --color-warm: var(--warm);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-soft: var(--brand-soft);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-cta-ink: var(--cta-ink);
+  --color-star: var(--star);
+  --font-heading: var(--font-worksans);
+  --font-sans: var(--font-source);
+}
+
+html {
+  background: var(--bg) !important;
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  background: var(--bg) !important;
+  color: var(--ink);
+  font-family: var(--font-source), system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-worksans), system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+h3 { font-weight: 700; letter-spacing: -0.01em; }
+
+p { text-wrap: pretty; }
+
+.btn {
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease;
+}
+.btn:active { transform: scale(0.97); }
+.btn:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+}
+
+.card {
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 200ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px -16px oklch(0.34 0.09 150 / 0.28);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 520ms cubic-bezier(0.23, 1, 0.32, 1), transform 520ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+.hero-in { animation: heroIn 560ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+details summary::-webkit-details-marker { display: none; }
+details[open] .chev { transform: rotate(45deg); }
+.chev { transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .hero-in { opacity: 1; transform: none; animation: none; transition: opacity 200ms ease; }
+  .btn, .card, .chev { transition: none; }
+}
